@@ -10,11 +10,13 @@
 
         <tr>
             <th>内容</th>
-            <td>{{ $blog->content }}</td>
+            <td>{!! nl2br(e($blog->content)) !!}</td>
         </tr>
     </table>
 
+<div class="flex justify-end">
 {{-- 日記編集ページへのリンク --}}
     <a class="btn btn-outline" href="{{ route('blogs.edit', $blog->id) }}">日記を修正する</a>
+</div>
 
 @endsection

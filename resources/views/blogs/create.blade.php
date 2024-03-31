@@ -18,7 +18,7 @@
                     <label for="content" class="label">
                         <span class="label-text">内容:</span>
                     </label>
-                    <input type="text" name="content" class="input input-bordered w-full">
+                    <textarea name="content" class="input input-bordered w-full" rows="10"></textarea>
                 </div>
 
             <button type="submit" class="btn btn-primary btn-outline">投稿</button>

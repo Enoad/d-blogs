@@ -47,6 +47,13 @@ class BlogsController extends Controller
      */
     public function store(Request $request)
     {
+        
+        // バリデーション
+        $request->validate([
+            'title' => 'required|max:255',
+            'content' => 'required',
+        ]);
+        
         // 日記を作成
         $blog = new Blog;
         $blog->title = $request->title;
@@ -100,6 +107,12 @@ class BlogsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // バリデーション
+        $request->validate([
+            'title' => 'required|max:255',
+            'content' => 'required',
+        ]);
+        
         // idの値で日記を検索して取得
         $blog = Blog::findOrFail($id);
         // 日記を更新
